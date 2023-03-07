@@ -2159,6 +2159,10 @@ export interface Locale extends ILocale {
      */
     "fontSize": string;
     /**
+     * カスタムフォント
+     */
+    "customFont": string;
+    /**
      * 画像が1枚のみのメディアリストの高さ
      */
     "mediaListWithOneImageAppearance": string;
