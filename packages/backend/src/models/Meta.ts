@@ -87,6 +87,11 @@ export class MiMeta {
 	public silencedHosts: string[];
 
 	@Column('varchar', {
+		length: 1024, array: true, default: '{}',
+	})
+	public mediaSilencedHosts: string[];
+
+	@Column('varchar', {
 		length: 1024,
 		nullable: true,
 	})
@@ -352,7 +357,7 @@ export class MiMeta {
 
 	@Column('varchar', {
 		length: 1024,
-		default: 'https://github.com/misskey-dev/misskey',
+		default: 'https://github.com/anatawa12/misskey/tree/vmimi-relay-timeline-releases?tab=readme-ov-file#vmimi-relay-timeline',
 		nullable: true,
 	})
 	public repositoryUrl: string | null;
