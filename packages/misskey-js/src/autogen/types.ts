@@ -5189,7 +5189,130 @@ export type operations = {
       /** @description OK (with results) */
       200: {
         content: {
-          'application/json': components['schemas']['AbuseReportNotificationRecipient'];
+          'application/json': {
+            cacheRemoteFiles: boolean;
+            cacheRemoteSensitiveFiles: boolean;
+            emailRequiredForSignup: boolean;
+            enableHcaptcha: boolean;
+            hcaptchaSiteKey: string | null;
+            enableMcaptcha: boolean;
+            mcaptchaSiteKey: string | null;
+            mcaptchaInstanceUrl: string | null;
+            enableRecaptcha: boolean;
+            recaptchaSiteKey: string | null;
+            enableTurnstile: boolean;
+            turnstileSiteKey: string | null;
+            enableTestcaptcha: boolean;
+            swPublickey: string | null;
+            /** @default /assets/ai.png */
+            mascotImageUrl: string | null;
+            bannerUrl: string | null;
+            serverErrorImageUrl: string | null;
+            infoImageUrl: string | null;
+            notFoundImageUrl: string | null;
+            iconUrl: string | null;
+            app192IconUrl: string | null;
+            app512IconUrl: string | null;
+            enableEmail: boolean;
+            enableServiceWorker: boolean;
+            translatorAvailable: boolean;
+            silencedHosts?: string[];
+            mediaSilencedHosts: string[];
+            pinnedUsers: string[];
+            hiddenTags: string[];
+            blockedHosts: string[];
+            sensitiveWords: string[];
+            prohibitedWords: string[];
+            prohibitedWordsForNameOfUser: string[];
+            bannedEmailDomains?: string[];
+            emailWhitelist: string | null;
+            preservedUsernames: string[];
+            hcaptchaSecretKey: string | null;
+            mcaptchaSecretKey: string | null;
+            recaptchaSecretKey: string | null;
+            turnstileSecretKey: string | null;
+            sensitiveMediaDetection: string;
+            sensitiveMediaDetectionSensitivity: string;
+            setSensitiveFlagAutomatically: boolean;
+            enableSensitiveMediaDetectionForVideos: boolean;
+            /** Format: id */
+            proxyAccountId: string | null;
+            email: string | null;
+            smtpSecure: boolean;
+            smtpHost: string | null;
+            smtpPort: number | null;
+            smtpUser: string | null;
+            smtpPass: string | null;
+            swPrivateKey: string | null;
+            useObjectStorage: boolean;
+            objectStorageBaseUrl: string | null;
+            objectStorageBucket: string | null;
+            objectStoragePrefix: string | null;
+            objectStorageEndpoint: string | null;
+            objectStorageRegion: string | null;
+            objectStoragePort: number | null;
+            objectStorageAccessKey: string | null;
+            objectStorageSecretKey: string | null;
+            objectStorageUseSSL: boolean;
+            objectStorageUseProxy: boolean;
+            objectStorageSetPublicRead: boolean;
+            enableIpLogging: boolean;
+            enableActiveEmailValidation: boolean;
+            enableVerifymailApi: boolean;
+            verifymailAuthKey: string | null;
+            enableTruemailApi: boolean;
+            truemailInstance: string | null;
+            truemailAuthKey: string | null;
+            enableChartsForRemoteUser: boolean;
+            enableChartsForFederatedInstances: boolean;
+            enableStatsForFederatedInstances: boolean;
+            enableServerMachineStats: boolean;
+            enableIdenticonGeneration: boolean;
+            manifestJsonOverride: string;
+            policies: Record<string, never>;
+            enableFanoutTimeline: boolean;
+            enableFanoutTimelineDbFallback: boolean;
+            perLocalUserUserTimelineCacheMax: number;
+            perRemoteUserUserTimelineCacheMax: number;
+            perUserHomeTimelineCacheMax: number;
+            perUserListTimelineCacheMax: number;
+            enableReactionsBuffering: boolean;
+            notesPerOneAd: number;
+            backgroundImageUrl: string | null;
+            deeplAuthKey: string | null;
+            deeplIsPro: boolean;
+            defaultDarkTheme: string | null;
+            defaultLightTheme: string | null;
+            description: string | null;
+            disableRegistration: boolean;
+            impressumUrl: string | null;
+            maintainerEmail: string | null;
+            maintainerName: string | null;
+            name: string | null;
+            shortName: string | null;
+            objectStorageS3ForcePathStyle: boolean;
+            privacyPolicyUrl: string | null;
+            inquiryUrl: string | null;
+            repositoryUrl: string | null;
+            /**
+             * @deprecated
+             * @description [Deprecated] Use "urlPreviewSummaryProxyUrl" instead.
+             */
+            summalyProxy: string | null;
+            themeColor: string | null;
+            tosUrl: string | null;
+            uri: string;
+            version: string;
+            urlPreviewEnabled: boolean;
+            urlPreviewTimeout: number;
+            urlPreviewMaximumContentLength: number;
+            urlPreviewRequireContentLength: boolean;
+            urlPreviewUserAgent: string | null;
+            urlPreviewSummaryProxyUrl: string | null;
+            customSplashText: string[];
+            federation: string;
+            federationHosts: string[];
+          };
         };
       };
       /** @description Client error */
@@ -9991,6 +10114,849 @@ export type operations = {
       /** @description OK (without any results) */
       204: {
         content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/unsuspend-user
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:unsuspend-user*
+   */
+  'admin___unsuspend-user': {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          userId: string;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/update-meta
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:meta*
+   */
+  'admin___update-meta': {
+    requestBody: {
+      content: {
+        'application/json': {
+          disableRegistration?: boolean | null;
+          pinnedUsers?: string[] | null;
+          hiddenTags?: string[] | null;
+          blockedHosts?: string[] | null;
+          sensitiveWords?: string[] | null;
+          prohibitedWords?: string[] | null;
+          prohibitedWordsForNameOfUser?: string[] | null;
+          themeColor?: string | null;
+          mascotImageUrl?: string | null;
+          bannerUrl?: string | null;
+          serverErrorImageUrl?: string | null;
+          infoImageUrl?: string | null;
+          notFoundImageUrl?: string | null;
+          iconUrl?: string | null;
+          app192IconUrl?: string | null;
+          app512IconUrl?: string | null;
+          backgroundImageUrl?: string | null;
+          logoImageUrl?: string | null;
+          name?: string | null;
+          shortName?: string | null;
+          description?: string | null;
+          defaultLightTheme?: string | null;
+          defaultDarkTheme?: string | null;
+          cacheRemoteFiles?: boolean;
+          cacheRemoteSensitiveFiles?: boolean;
+          emailRequiredForSignup?: boolean;
+          enableHcaptcha?: boolean;
+          hcaptchaSiteKey?: string | null;
+          hcaptchaSecretKey?: string | null;
+          enableMcaptcha?: boolean;
+          mcaptchaSiteKey?: string | null;
+          mcaptchaInstanceUrl?: string | null;
+          mcaptchaSecretKey?: string | null;
+          enableRecaptcha?: boolean;
+          recaptchaSiteKey?: string | null;
+          recaptchaSecretKey?: string | null;
+          enableTurnstile?: boolean;
+          turnstileSiteKey?: string | null;
+          turnstileSecretKey?: string | null;
+          enableTestcaptcha?: boolean;
+          /** @enum {string} */
+          sensitiveMediaDetection?: 'none' | 'all' | 'local' | 'remote';
+          /** @enum {string} */
+          sensitiveMediaDetectionSensitivity?: 'medium' | 'low' | 'high' | 'veryLow' | 'veryHigh';
+          setSensitiveFlagAutomatically?: boolean;
+          enableSensitiveMediaDetectionForVideos?: boolean;
+          /** Format: misskey:id */
+          proxyAccountId?: string | null;
+          maintainerName?: string | null;
+          maintainerEmail?: string | null;
+          langs?: string[];
+          deeplAuthKey?: string | null;
+          deeplIsPro?: boolean;
+          enableEmail?: boolean;
+          email?: string | null;
+          smtpSecure?: boolean;
+          smtpHost?: string | null;
+          smtpPort?: number | null;
+          smtpUser?: string | null;
+          smtpPass?: string | null;
+          enableServiceWorker?: boolean;
+          swPublicKey?: string | null;
+          swPrivateKey?: string | null;
+          tosUrl?: string | null;
+          repositoryUrl?: string | null;
+          feedbackUrl?: string | null;
+          impressumUrl?: string | null;
+          privacyPolicyUrl?: string | null;
+          inquiryUrl?: string | null;
+          useObjectStorage?: boolean;
+          objectStorageBaseUrl?: string | null;
+          objectStorageBucket?: string | null;
+          objectStoragePrefix?: string | null;
+          objectStorageEndpoint?: string | null;
+          objectStorageRegion?: string | null;
+          objectStoragePort?: number | null;
+          objectStorageAccessKey?: string | null;
+          objectStorageSecretKey?: string | null;
+          objectStorageUseSSL?: boolean;
+          objectStorageUseProxy?: boolean;
+          objectStorageSetPublicRead?: boolean;
+          objectStorageS3ForcePathStyle?: boolean;
+          enableIpLogging?: boolean;
+          enableActiveEmailValidation?: boolean;
+          enableVerifymailApi?: boolean;
+          verifymailAuthKey?: string | null;
+          enableTruemailApi?: boolean;
+          truemailInstance?: string | null;
+          truemailAuthKey?: string | null;
+          enableChartsForRemoteUser?: boolean;
+          enableChartsForFederatedInstances?: boolean;
+          enableStatsForFederatedInstances?: boolean;
+          enableServerMachineStats?: boolean;
+          enableIdenticonGeneration?: boolean;
+          serverRules?: string[];
+          bannedEmailDomains?: string[];
+          emailWhitelist?: boolean;
+          preservedUsernames?: string[];
+          manifestJsonOverride?: string;
+          enableFanoutTimeline?: boolean;
+          enableFanoutTimelineDbFallback?: boolean;
+          perLocalUserUserTimelineCacheMax?: number;
+          perRemoteUserUserTimelineCacheMax?: number;
+          perUserHomeTimelineCacheMax?: number;
+          perUserListTimelineCacheMax?: number;
+          enableReactionsBuffering?: boolean;
+          notesPerOneAd?: number;
+          silencedHosts?: string[] | null;
+          mediaSilencedHosts?: string[] | null;
+          /** @description [Deprecated] Use "urlPreviewSummaryProxyUrl" instead. */
+          summalyProxy?: string | null;
+          urlPreviewEnabled?: boolean;
+          urlPreviewTimeout?: number;
+          urlPreviewMaximumContentLength?: number;
+          urlPreviewRequireContentLength?: boolean;
+          urlPreviewUserAgent?: string | null;
+          urlPreviewSummaryProxyUrl?: string | null;
+          customSplashText?: string[] | null;
+          /** @enum {string} */
+          federation?: 'all' | 'none' | 'specified';
+          federationHosts?: string[];
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/delete-account
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:delete-account*
+   */
+  'admin___delete-account': {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          userId: string;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/update-user-note
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:user-note*
+   */
+  'admin___update-user-note': {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          userId: string;
+          text: string;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/create
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:roles*
+   */
+  admin___roles___create: {
+    requestBody: {
+      content: {
+        'application/json': {
+          name: string;
+          description: string;
+          color: string | null;
+          iconUrl: string | null;
+          /** @enum {string} */
+          target: 'manual' | 'conditional';
+          condFormula: Record<string, never>;
+          isPublic: boolean;
+          isModerator: boolean;
+          isAdministrator: boolean;
+          /** @default false */
+          isExplorable?: boolean;
+          asBadge: boolean;
+          canEditMembersByModerator: boolean;
+          displayOrder: number;
+          policies: Record<string, never>;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (with results) */
+      200: {
+        content: {
+          'application/json': components['schemas']['Role'];
+        };
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/delete
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:roles*
+   */
+  admin___roles___delete: {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          roleId: string;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/list
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *read:admin:roles*
+   */
+  admin___roles___list: {
+    responses: {
+      /** @description OK (with results) */
+      200: {
+        content: {
+          'application/json': components['schemas']['Role'][];
+        };
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/show
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *read:admin:roles*
+   */
+  admin___roles___show: {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          roleId: string;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (with results) */
+      200: {
+        content: {
+          'application/json': components['schemas']['Role'];
+        };
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/update
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:roles*
+   */
+  admin___roles___update: {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          roleId: string;
+          name?: string;
+          description?: string;
+          color?: string | null;
+          iconUrl?: string | null;
+          /** @enum {string} */
+          target?: 'manual' | 'conditional';
+          condFormula?: Record<string, never>;
+          isPublic?: boolean;
+          isModerator?: boolean;
+          isAdministrator?: boolean;
+          isExplorable?: boolean;
+          asBadge?: boolean;
+          canEditMembersByModerator?: boolean;
+          displayOrder?: number;
+          policies?: Record<string, never>;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/assign
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:roles*
+   */
+  admin___roles___assign: {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          roleId: string;
+          /** Format: misskey:id */
+          userId: string;
+          expiresAt?: number | null;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/unassign
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:roles*
+   */
+  admin___roles___unassign: {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          roleId: string;
+          /** Format: misskey:id */
+          userId: string;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/update-default-policies
+   * @description No description provided.
+   *
+   * **Credential required**: *Yes* / **Permission**: *write:admin:roles*
+   */
+  'admin___roles___update-default-policies': {
+    requestBody: {
+      content: {
+        'application/json': {
+          policies: Record<string, never>;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (without any results) */
+      204: {
+        content: never;
+      };
+      /** @description Client error */
+      400: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Authentication error */
+      401: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Forbidden error */
+      403: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description I'm Ai */
+      418: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+      /** @description Internal server error */
+      500: {
+        content: {
+          'application/json': components['schemas']['Error'];
+        };
+      };
+    };
+  };
+  /**
+   * admin/roles/users
+   * @description No description provided.
+   *
+   * **Credential required**: *No* / **Permission**: *read:admin:roles*
+   */
+  admin___roles___users: {
+    requestBody: {
+      content: {
+        'application/json': {
+          /** Format: misskey:id */
+          roleId: string;
+          /** Format: misskey:id */
+          sinceId?: string;
+          /** Format: misskey:id */
+          untilId?: string;
+          /** @default 10 */
+          limit?: number;
+        };
+      };
+    };
+    responses: {
+      /** @description OK (with results) */
+      200: {
+        content: {
+          'application/json': ({
+              /** Format: misskey:id */
+              id: string;
+              /** Format: date-time */
+              createdAt: string;
+              user: components['schemas']['UserDetailed'];
+              /** Format: date-time */
+              expiresAt: string | null;
+            })[];
+        };
       };
       /** @description Client error */
       400: {
