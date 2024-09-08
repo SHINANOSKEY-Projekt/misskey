@@ -16,7 +16,7 @@ import probeImageSize from 'probe-image-size';
 import { type predictionType } from 'nsfwjs';
 import exifr from 'exifr';
 import { sharpBmp } from '@misskey-dev/sharp-read-bmp';
-import { encode } from 'blurhash';
+import * as blurhash from 'blurhash';
 import { createTempDir } from '@/misc/create-temp.js';
 import { AiService } from '@/core/AiService.js';
 import { LoggerService } from '@/core/LoggerService.js';
@@ -498,7 +498,7 @@ export class FileInfoService {
 	}
 
 	/**
-	 * Calculate average color of image
+	 * Calculate blurhash string of image
 	 */
 	@bindThis
 	private getBlurhash(path: string, type: string): Promise<string> {
@@ -513,7 +513,7 @@ export class FileInfoService {
 					let hash;
 
 					try {
-						hash = encode(new Uint8ClampedArray(buffer), info.width, info.height, 5, 5);
+						hash = blurhash.encode(new Uint8ClampedArray(buffer), info.width, info.height, 5, 5);
 					} catch (e) {
 						return reject(e);
 					}
