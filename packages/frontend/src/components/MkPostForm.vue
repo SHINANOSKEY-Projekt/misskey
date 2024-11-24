@@ -1064,8 +1064,7 @@ defineExpose({
 .scrollArea {
 	overflow-x: clip;
 	overflow-y: scroll;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-block: 4px;
 }
 
 //#region header
@@ -1219,7 +1218,7 @@ defineExpose({
 //#endregion
 
 .preview {
-	padding: 16px 20px 0 20px;
+	padding: 16px 20px;
 	min-height: 75px;
 	max-height: 150px;
 	overflow: auto;
@@ -1406,7 +1405,7 @@ html[data-color-scheme=light] .preview {
 	}
 
 	.preview {
-		padding: 16px 14px 0 14px;
+		padding: 16px 14px;
 	}
 	.cw,
 	.hashtags,
@@ -1422,6 +1421,7 @@ html[data-color-scheme=light] .preview {
 @container (max-width: 350px) {
 	.footer {
 		font-size: 0.9em;
+		padding-top: 2px;
 	}
 
 	.footerLeft {

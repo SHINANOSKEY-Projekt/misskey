@@ -147,7 +147,9 @@ watch([choices, multiple, expiration, atDate, atTime, after, unit], () => emit('
 
 <style lang="scss" scoped>
 .zmdxowus {
-	padding: 8px 16px;
+	padding-block: 8px;
+	padding-inline-start: 16px;
+	padding-inline-end: 8px;
 
 	> .caution {
 		margin: 0 0 8px 0;
