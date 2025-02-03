@@ -1,7 +1,8 @@
 ## Unreleased
 
 ### General
--
+- Fix: Docker のビルドに失敗する問題を修正  
+  (Cherry-picked from https://activitypub.software/TransFem-org/Sharkey/-/merge_requests/883)
 
 ### Client
 - Fix: 一部環境でセンシティブなファイルを含むノートの非表示が効かない問題 
