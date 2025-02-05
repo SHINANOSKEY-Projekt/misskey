@@ -1,6 +1,6 @@
 {
 	"name": "misskey",
-	"version": "2025.1.0-SHINANO.4",
+	"version": "2025.2.0-SHINANO.4",
 	"codename": "Cherry",
 	"repository": {
 		"type": "git",
