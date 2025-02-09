@@ -8492,7 +8492,8 @@ export type operations = {
             urlPreviewRequireContentLength: boolean;
             urlPreviewUserAgent: string | null;
             urlPreviewSummaryProxyUrl: string | null;
-            federation: string;
+            /** @enum {string} */
+            federation: 'all' | 'specified' | 'none';
             federationHosts: string[];
           };
         };
