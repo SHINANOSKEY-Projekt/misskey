@@ -1,7 +1,7 @@
 {
 	"name": "misskey",
-	"version": "2025.2.0-SHINANO.8",
-	"codename": "Cherry",
+	"version": "2025.2.0-SHINANO.9",
+	"codename": "Churchill",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/SHINANOSKEY-Projekt/SHINANOSKEY.git"
