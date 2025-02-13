@@ -23,7 +23,9 @@ SPDX-License-Identifier: AGPL-3.0-only
 		:class="$style.circle"
 		:stroke="color"
 	/>
-	<text x="50%" y="50%" dy="0.05" text-anchor="middle" :class="$style.text">{{ (value * 100).toFixed(0) }}%</text>
+	<text v-if="!title" x="50%" y="50%" dy="0.05" text-anchor="middle" :class="$style.text">{{ (value * 100).toFixed(0) }}%</text>
+	<text v-if="title" x="50%" y="40%" dy="0.05" text-anchor="middle" :class="$style.text">{{ title }}</text>
+	<text v-if="title" x="50%" y="60%" dy="0.05" text-anchor="middle" :class="$style.text">{{ (value * 100).toFixed(0) }}%</text>
 </svg>
 </template>
 
@@ -32,6 +34,7 @@ import { computed } from 'vue';
 
 const props = defineProps<{
 	value: number;
+	title?: string;
 }>();
 
 const r = 0.45;
