@@ -821,8 +821,8 @@ importers:
         specifier: 1.85.1
         version: 1.85.1
       shiki:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 2.4.1
+        version: 2.4.1
       strict-event-emitter-types:
         specifier: 2.0.0
         version: 2.0.0
@@ -1035,14 +1035,14 @@ importers:
         specifier: 0.4.5
         version: 0.4.5(vitest@3.0.7(@types/debug@4.1.12)(@types/node@22.13.9)(happy-dom@17.2.2)(jsdom@26.0.0(bufferutil@4.0.9)(canvas@3.1.0)(utf-8-validate@6.0.5))(msw@2.7.3(@types/node@22.13.9)(typescript@5.8.2))(sass@1.85.1)(terser@5.39.0)(tsx@4.19.3))
       vue-component-type-helpers:
-        specifier: 2.2.8
-        version: 2.2.8
+        specifier: 2.2.2
+        version: 2.2.2
       vue-eslint-parser:
         specifier: 9.4.3
         version: 9.4.3(eslint@9.20.1)
       vue-tsc:
-        specifier: 2.2.8
-        version: 2.2.8(typescript@5.8.2)
+        specifier: 2.2.2
+        version: 2.2.2(typescript@5.7.3)
 
   packages/frontend-embed:
     dependencies:
@@ -1101,8 +1101,8 @@ importers:
         specifier: 1.85.1
         version: 1.85.1
       shiki:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 2.4.1
+        version: 2.4.1
       tinycolor2:
         specifier: 1.6.0
         version: 1.6.0
@@ -1201,14 +1201,14 @@ importers:
         specifier: 1.0.3
         version: 1.0.3
       vue-component-type-helpers:
-        specifier: 2.2.8
-        version: 2.2.8
+        specifier: 2.2.2
+        version: 2.2.2
       vue-eslint-parser:
         specifier: 9.4.3
         version: 9.4.3(eslint@9.20.1)
       vue-tsc:
-        specifier: 2.2.8
-        version: 2.2.8(typescript@5.8.2)
+        specifier: 2.2.2
+        version: 2.2.2(typescript@5.7.3)
 
   packages/frontend-shared:
     dependencies:
@@ -3298,23 +3298,23 @@ packages:
     engines: {node: '>=14.18'}
     hasBin: true
 
-  '@shikijs/core@3.1.0':
-    resolution: {integrity: sha512-1ppAOyg3F18N8Ge9DmJjGqRVswihN33rOgPovR6gUHW17Hw1L4RlRhnmVQcsacSHh0A8IO1FIgNbtTxUFwodmg==}
+  '@shikijs/core@2.4.1':
+    resolution: {integrity: sha512-c7AkRsCpSVjKHsTwuvRVMEAdADq4Z1KoodcS4LaIqMzBTM0+Q572VRk1PIxtzaMtdiHlRPO6mH5iPdJoTV59mQ==}
 
-  '@shikijs/engine-javascript@3.1.0':
-    resolution: {integrity: sha512-/LwkhW17jYi7uPcdaaSQQDNW+xgrHXarkrxYPoC6WPzH2xW5mFMw12doHXJBqxmYvtcTbaatcv2MkH9+3PU1FA==}
+  '@shikijs/engine-javascript@2.4.1':
+    resolution: {integrity: sha512-2DnVilsUCgA81lnxt67dEZf2C6hdRzDYIs7yG33yWQIjljAxlXi3MKt7n0BXKr6uT5sZ0JdtX/+Pq2FN31YVdQ==}
 
-  '@shikijs/engine-oniguruma@3.1.0':
-    resolution: {integrity: sha512-reRgy8VzDPdiDocuGDD60Rk/jLxgcgy+6H4n6jYLeN2Yw5ikasRjQQx8ERXtDM35yg2v/d6KolDBcK8hYYhcmw==}
+  '@shikijs/engine-oniguruma@2.4.1':
+    resolution: {integrity: sha512-PvN76WM2HjmSbNQmLl8Jzm3h8Hsf/g9kKs3jPWKD6uMpCfk+M3HalWONz85zQF4lqrI3lamMTV5pHcOVSswpqg==}
 
-  '@shikijs/langs@3.1.0':
-    resolution: {integrity: sha512-hAM//sExPXAXG3ZDWjrmV6Vlw4zlWFOcT1ZXNhFRBwPP27scZu/ZIdZ+TdTgy06zSvyF4KIjnF8j6+ScKGu6ww==}
+  '@shikijs/langs@2.4.1':
+    resolution: {integrity: sha512-MLpCfw8gqWAgYvkV4Qsh/yjJirGhqwBQqtNgNrYOES7IoMTsthQ2x/8+JEO1hIDyS3qJPSooxCGQpX7EXsiFpQ==}
 
-  '@shikijs/themes@3.1.0':
-    resolution: {integrity: sha512-A4MJmy9+ydLNbNCtkmdTp8a+ON+MMXoUe1KTkELkyu0+pHGOcbouhNuobhZoK59cL4cOST6CCz1x+kUdkp9UZA==}
+  '@shikijs/themes@2.4.1':
+    resolution: {integrity: sha512-U+Yt03Qfy9251BjQkPf9IkbiRypCqLcxfeCkk9cjqAuAhgM6G+v8GRHB+7VR1OQu92sWkhmk+zdbJAhgAnnL8g==}
 
-  '@shikijs/types@3.1.0':
-    resolution: {integrity: sha512-F8e7Fy4ihtcNpJG572BZZC1ErYrBrzJ5Cbc9Zi3REgWry43gIvjJ9lFAoUnuy7Bvy4IFz7grUSxL5edfrrjFEA==}
+  '@shikijs/types@2.4.1':
+    resolution: {integrity: sha512-fE73tqCjiHIDUq7SYU8i4d9TyOcJh2u2J8aQGqQs0KkFg6FbBEQoDiBASMM5Vxqag1VS58y+MHLBuSQmwtB4Og==}
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
@@ -4567,8 +4567,8 @@ packages:
       typescript:
         optional: true
 
-  '@vue/language-core@2.2.8':
-    resolution: {integrity: sha512-rrzB0wPGBvcwaSNRriVWdNAbHQWSf0NlGqgKHK5mEkXpefjUlVRP62u03KvwZpvKVjRnBIQ/Lwre+Mx9N6juUQ==}
+  '@vue/language-core@2.2.2':
+    resolution: {integrity: sha512-QotO41kurE5PLf3vrNgGTk3QswO2PdUFjBwNiOi7zMmGhwb25PSTh9hD1MCgKC06AVv+8sZQvlL3Do4TTVHSiQ==}
     peerDependencies:
       typescript: '*'
     peerDependenciesMeta:
@@ -4745,14 +4745,6 @@ packages:
 
   alien-signals@1.0.3:
     resolution: {integrity: sha512-zQOh3wAYK5ujENxvBBR3CFGF/b6afaSzZ/c9yNhJ1ENrGHETvpUuKQsa93Qrclp0+PzTF93MaZ7scVp1uUozhA==}
-
-  analytics-utils@1.0.14:
-    resolution: {integrity: sha512-9v0kPd8v0GuBvfQcg5BO48AElaEAr9IXMAfJWXYMAhrD3QprgozEIUgMp/de0vS136PUOBB+10XQH9eBgBmfMw==}
-    peerDependencies:
-      '@types/dlv': ^1.0.0
-
-  analytics@0.8.16:
-    resolution: {integrity: sha512-LEFQ47G9V1zVp9WIh2xhnbmSFEJq+WEzSv6voJ5uba88lefiIIYeG2nq87gFu83ocz1qtb9u7XgeaKKVBbbgWA==}
 
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -9457,8 +9449,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@3.1.0:
-    resolution: {integrity: sha512-LdTNyWQlC5zdCaHdcp1zPA1OVA2ivb+KjGOOnGcy02tGaF5ja+dGibWFH7Ar8YlngUgK/scDqworK18Ys9cbYA==}
+  shiki@2.4.1:
+    resolution: {integrity: sha512-1MmgQgSSx04OSUPqTg7deJudOL4vXpkNEJHlzKEoVNOLFUmXPB/vRvJoLxzy/Un+UIp4zryXJcWDUAUTOSbDyw==}
 
   shimmer@1.2.1:
     resolution: {integrity: sha512-sQTKC1Re/rM6XyFM6fIAGHRPVGvyXfgzIDvzoq608vM+jeyVD0Tu1E6Np0Kc2zAIFWIj963V2800iF/9LPieQw==}
@@ -10553,8 +10545,8 @@ packages:
   vue-component-type-helpers@2.0.16:
     resolution: {integrity: sha512-qisL/iAfdO++7w+SsfYQJVPj6QKvxp4i1MMxvsNO41z/8zu3KuAw9LkhKUfP/kcOWGDxESp+pQObWppXusejCA==}
 
-  vue-component-type-helpers@2.2.8:
-    resolution: {integrity: sha512-4bjIsC284coDO9om4HPA62M7wfsTvcmZyzdfR0aUlFXqq4tXxM1APyXpNVxPC8QazKw9OhmZNHBVDA6ODaZsrA==}
+  vue-component-type-helpers@2.2.2:
+    resolution: {integrity: sha512-6lLY+n2xz2kCYshl59mL6gy8OUUTmkscmDFMO8i7Lj+QKwgnIFUZmM1i/iTYObtrczZVdw7UakPqDTGwVSGaRg==}
 
   vue-demi@0.14.7:
     resolution: {integrity: sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==}
@@ -10586,8 +10578,8 @@ packages:
   vue-template-compiler@2.7.14:
     resolution: {integrity: sha512-zyA5Y3ArvVG0NacJDkkzJuPQDF8RFeRlzV2vLeSnhSpieO6LK2OVbdLPi5MPPs09Ii+gMO8nY4S3iKQxBxDmWQ==}
 
-  vue-tsc@2.2.8:
-    resolution: {integrity: sha512-jBYKBNFADTN+L+MdesNX/TB3XuDSyaWynKMDgR+yCSln0GQ9Tfb7JS2lr46s2LiFUT1WsmfWsSvIElyxzOPqcQ==}
+  vue-tsc@2.2.2:
+    resolution: {integrity: sha512-1icPKkxAA5KTAaSwg0wVWdE48EdsH8fgvcbAiqojP4jXKl6LEM3soiW1aG/zrWrFt8Mw1ncG2vG1PvpZpVfehA==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -13287,33 +13279,35 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@shikijs/core@3.1.0':
+  '@shikijs/core@2.4.1':
     dependencies:
-      '@shikijs/types': 3.1.0
+      '@shikijs/engine-javascript': 2.4.1
+      '@shikijs/engine-oniguruma': 2.4.1
+      '@shikijs/types': 2.4.1
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
-  '@shikijs/engine-javascript@3.1.0':
+  '@shikijs/engine-javascript@2.4.1':
     dependencies:
-      '@shikijs/types': 3.1.0
+      '@shikijs/types': 2.4.1
       '@shikijs/vscode-textmate': 10.0.2
-      oniguruma-to-es: 3.1.1
+      oniguruma-to-es: 3.1.0
 
-  '@shikijs/engine-oniguruma@3.1.0':
+  '@shikijs/engine-oniguruma@2.4.1':
     dependencies:
-      '@shikijs/types': 3.1.0
+      '@shikijs/types': 2.4.1
       '@shikijs/vscode-textmate': 10.0.2
 
-  '@shikijs/langs@3.1.0':
+  '@shikijs/langs@2.4.1':
     dependencies:
-      '@shikijs/types': 3.1.0
+      '@shikijs/types': 2.4.1
 
-  '@shikijs/themes@3.1.0':
+  '@shikijs/themes@2.4.1':
     dependencies:
-      '@shikijs/types': 3.1.0
+      '@shikijs/types': 2.4.1
 
-  '@shikijs/types@3.1.0':
+  '@shikijs/types@2.4.1':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -14033,8 +14027,8 @@ snapshots:
       storybook: 8.6.3(bufferutil@4.0.9)(prettier@3.5.3)(utf-8-validate@6.0.5)
       ts-dedent: 2.2.0
       type-fest: 2.19.0
-      vue: 3.5.13(typescript@5.8.2)
-      vue-component-type-helpers: 2.2.8
+      vue: 3.5.13(typescript@5.7.3)
+      vue-component-type-helpers: 2.2.2
 
   '@stylistic/eslint-plugin@2.13.0(eslint@9.20.1)(typescript@5.7.3)':
     dependencies:
@@ -14973,7 +14967,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.2
 
-  '@vue/language-core@2.2.8(typescript@5.8.2)':
+  '@vue/language-core@2.2.2(typescript@5.7.3)':
     dependencies:
       '@volar/language-core': 2.4.11
       '@vue/compiler-dom': 3.5.13
@@ -15006,7 +15000,7 @@ snapshots:
     dependencies:
       '@vue/compiler-ssr': 3.5.13
       '@vue/shared': 3.5.13
-      vue: 3.5.13(typescript@5.8.2)
+      vue: 3.5.13(typescript@5.7.3)
 
   '@vue/shared@3.5.13': {}
 
@@ -15198,19 +15192,6 @@ snapshots:
       require-from-string: 2.0.2
 
   alien-signals@1.0.3: {}
-
-  analytics-utils@1.0.14(@types/dlv@1.1.5):
-    dependencies:
-      '@analytics/type-utils': 0.6.2
-      '@types/dlv': 1.1.5
-      dlv: 1.1.3
-
-  analytics@0.8.16(@types/dlv@1.1.5):
-    dependencies:
-      '@analytics/core': 0.12.17(@types/dlv@1.1.5)
-      '@analytics/storage-utils': 0.4.2
-    transitivePeerDependencies:
-      - '@types/dlv'
 
   ansi-colors@4.1.3: {}
 
@@ -21033,14 +21014,14 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@3.1.0:
+  shiki@2.4.1:
     dependencies:
-      '@shikijs/core': 3.1.0
-      '@shikijs/engine-javascript': 3.1.0
-      '@shikijs/engine-oniguruma': 3.1.0
-      '@shikijs/langs': 3.1.0
-      '@shikijs/themes': 3.1.0
-      '@shikijs/types': 3.1.0
+      '@shikijs/core': 2.4.1
+      '@shikijs/engine-javascript': 2.4.1
+      '@shikijs/engine-oniguruma': 2.4.1
+      '@shikijs/langs': 2.4.1
+      '@shikijs/themes': 2.4.1
+      '@shikijs/types': 2.4.1
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
 
@@ -22140,7 +22121,7 @@ snapshots:
 
   vue-component-type-helpers@2.0.16: {}
 
-  vue-component-type-helpers@2.2.8: {}
+  vue-component-type-helpers@2.2.2: {}
 
   vue-demi@0.14.7(vue@3.5.13(typescript@5.8.2)):
     dependencies:
@@ -22183,11 +22164,11 @@ snapshots:
       de-indent: 1.0.2
       he: 1.2.0
 
-  vue-tsc@2.2.8(typescript@5.8.2):
+  vue-tsc@2.2.2(typescript@5.7.3):
     dependencies:
       '@volar/typescript': 2.4.11
-      '@vue/language-core': 2.2.8(typescript@5.8.2)
-      typescript: 5.8.2
+      '@vue/language-core': 2.2.2(typescript@5.7.3)
+      typescript: 5.7.3
 
   vue@3.5.13(typescript@5.8.2):
     dependencies:
