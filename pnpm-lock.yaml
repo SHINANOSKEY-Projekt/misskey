@@ -4893,6 +4893,14 @@ packages:
   alien-signals@1.0.3:
     resolution: {integrity: sha512-zQOh3wAYK5ujENxvBBR3CFGF/b6afaSzZ/c9yNhJ1ENrGHETvpUuKQsa93Qrclp0+PzTF93MaZ7scVp1uUozhA==}
 
+  analytics-utils@1.0.14:
+    resolution: {integrity: sha512-9v0kPd8v0GuBvfQcg5BO48AElaEAr9IXMAfJWXYMAhrD3QprgozEIUgMp/de0vS136PUOBB+10XQH9eBgBmfMw==}
+    peerDependencies:
+      '@types/dlv': ^1.0.0
+
+  analytics@0.8.16:
+    resolution: {integrity: sha512-LEFQ47G9V1zVp9WIh2xhnbmSFEJq+WEzSv6voJ5uba88lefiIIYeG2nq87gFu83ocz1qtb9u7XgeaKKVBbbgWA==}
+
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
     engines: {node: '>=6'}
@@ -15380,6 +15388,19 @@ snapshots:
       require-from-string: 2.0.2
 
   alien-signals@1.0.3: {}
+
+  analytics-utils@1.0.14(@types/dlv@1.1.5):
+    dependencies:
+      '@analytics/type-utils': 0.6.2
+      '@types/dlv': 1.1.5
+      dlv: 1.1.3
+
+  analytics@0.8.16(@types/dlv@1.1.5):
+    dependencies:
+      '@analytics/core': 0.12.17(@types/dlv@1.1.5)
+      '@analytics/storage-utils': 0.4.2
+    transitivePeerDependencies:
+      - '@types/dlv'
 
   ansi-colors@4.1.3: {}
 

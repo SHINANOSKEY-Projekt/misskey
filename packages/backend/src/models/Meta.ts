@@ -670,4 +670,9 @@ export class MiMeta {
 		default: '{}',
 	})
 	public customSplashText: string[];
+	@Column('varchar', {
+		length: 64,
+		nullable: true,
+	})
+	public googleAnalyticsMeasurementId: string | null;
 }
