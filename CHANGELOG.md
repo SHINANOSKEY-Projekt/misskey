@@ -1,5 +1,9 @@
 ## Unreleased
 
+### General
+- pnpmをv10に更新
+- Corepackを削除
+
 ### Client
 - Feat: 設定の検索を追加(実験的)
 - Enhance: 設定項目の再配置
