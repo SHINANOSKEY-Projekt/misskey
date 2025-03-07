@@ -1,8 +1,5 @@
 ## Unreleased
 
-### General
--
-
 ### Client
 - Feat: 設定の検索を追加(実験的)
 
