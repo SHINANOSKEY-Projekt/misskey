@@ -1,7 +1,6 @@
 {
-	"name": "misskey",
-	/*バージョン表記覺書 (メジャー).(マイナー).(パッチ)(プレリリース、99=Alpha,98=beta...って感じ)(プレリリースパッチ)-(独自バージョン)*/
-	"version": "2025.3.2991-SHINANO.1",
+	"name": "misskey",	
+	"version": "2025.3.2991-SHINANO.2",
 	"codename": "Churchill",
 	"repository": {
 		"type": "git",
