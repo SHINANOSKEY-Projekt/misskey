@@ -76,7 +76,7 @@ const withRenotes = computed<boolean>({
 	set: (x) => saveTlFilter('withRenotes', x),
 });
 const withLocalOnly = computed<boolean>({
-	get: () => defaultStore.reactiveState.tl.value.filter.withLocalOnly,
+	get: () => store.reactiveState.tl.value.filter.withLocalOnly,
 	set: (x) => saveTlFilter('withLocalOnly', x),
 });
 
@@ -208,7 +208,7 @@ function saveSrc(newSrc: TimelinePageSrc): void {
 		out.userList = prefer.r.pinnedUserLists.value.find(l => l.id === id) ?? null;
 	}
 
-	Store.set('tl', out);
+	store.set('tl', out);
 	if (['local', 'global', 'vmimi-relay'].includes(newSrc)) {
 		srcWhenNotSignin.value = newSrc as 'local' | 'global' | 'vmimi-relay';
 	}
