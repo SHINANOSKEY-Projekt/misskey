@@ -84,10 +84,6 @@ export const store = markRaw(new Storage('base', {
 			},
 		},
 	},
-	overridedDeviceKind: {
-		where: 'device',
-		default: null as DeviceKind | null,
-	},
 	darkMode: {
 		where: 'device',
 		default: false,
@@ -155,6 +151,10 @@ export const store = markRaw(new Storage('base', {
 			place: string | null;
 			data: Record<string, any>;
 		}[],
+	},
+	overridedDeviceKind: {
+		where: 'device',
+		default: null as DeviceKind | null,
 	},
 	defaultSideView: {
 		where: 'device',
