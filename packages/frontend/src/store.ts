@@ -41,14 +41,6 @@ export const store = markRaw(new Storage('base', {
 		where: 'account',
 		default: null,
 	},
-	reactions: {
-		where: 'account',
-		default: ['👍', '❤️', '😆', '🤔', '😮', '🎉', '💢', '😥', '😇', '🍮'],
-	},
-	pinnedEmojis: {
-		where: 'account',
-		default: [],
-	},
 	reactionAcceptance: {
 		where: 'account',
 		default: 'nonSensitiveOnly' as 'likeOnly' | 'likeOnlyForRemote' | 'nonSensitiveOnly' | 'nonSensitiveOnlyForLocalLikeOnlyForRemote' | null,
@@ -130,6 +122,14 @@ export const store = markRaw(new Storage('base', {
 	},
 
 	//#region TODO: そのうち消す (preferに移行済み)
+	reactions: {
+		where: 'account',
+		default: ['👍', '❤️', '😆', '🤔', '😮', '🎉', '💢', '😥', '😇', '🍮'],
+	},
+	pinnedEmojis: {
+		where: 'account',
+		default: [],
+	},
 	widgets: {
 		where: 'account',
 		default: [] as {
