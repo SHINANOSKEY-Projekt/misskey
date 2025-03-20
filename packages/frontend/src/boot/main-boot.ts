@@ -79,7 +79,7 @@ export async function mainBoot() {
 
 		// prefereces migration
 		// TODO: そのうち消す
-		if (lastVersion && (compareVersions('2025.3.2-alpha.0', lastVersion) === 1)) {
+		if (lastVersion && (compareVersions('2025.3.2-Alpha.10.SHINANO.4+20250313.1', lastVersion) === 1)) {
 			console.log('Preferences migration');
 
 			store.loaded.then(async () => {
