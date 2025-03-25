@@ -10558,6 +10558,10 @@ export interface Locale extends ILocale {
          */
         "deleteGalleryPost": string;
         /**
+         * チャットルームを削除
+         */
+        "deleteChatRoom": string;
+        /**
          * プロキシアカウントの説明を更新
          */
         "updateProxyAccountDescription": string;
