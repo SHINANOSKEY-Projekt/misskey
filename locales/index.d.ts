@@ -5465,6 +5465,10 @@ export interface Locale extends ILocale {
          */
         "muteThisRoom": string;
         /**
+         * ルームを削除
+         */
+        "deleteRoom": string;
+        /**
          * このユーザーとのチャットを開始できません
          */
         "cannotChatWithTheUser": string;
