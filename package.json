@@ -1,6 +1,6 @@
 {
 	"name": "misskey",	
-	"version": "2025.3.2-Beta.16.SHINANO.0+20250401.8",
+	"version": "2025.3.2-Beta.17.SHINANO.0+20250401.9",
 	"codename": "Churchill",
 	"repository": {
 		"type": "git",
