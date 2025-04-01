@@ -1,7 +1,7 @@
 {
 	"type": "module",
 	"name": "misskey-js",
-	"version": "2025.3.2-Beta.11.SHINANO.0+20250401.3",
+	"version": "2025.3.2-Beta.12.SHINANO.0+20250401.4",
 	"description": "Misskey SDK for JavaScript",
 	"license": "MIT",
 	"main": "./built/index.js",
