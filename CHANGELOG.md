@@ -1,4 +1,4 @@
-## Unreleased
+## 2025.4.0
 
 ### General
 - Feat: チャットがリニューアルして復活しました(beta)
