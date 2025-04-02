@@ -4907,6 +4907,8 @@ export type components = {
       hasUnreadNote: boolean;
       /** @default false */
       notify: boolean;
+      /** @default false */
+      hideNotesInSensitiveChannel: boolean;
     };
     Clip: {
       /**
@@ -12283,6 +12285,7 @@ export type operations = {
           excludeBots?: boolean;
           withReplies: boolean;
           withFile: boolean;
+          hideNotesInSensitiveChannel?: boolean;
         };
       };
     };
@@ -12564,6 +12567,7 @@ export type operations = {
           excludeBots?: boolean;
           withReplies?: boolean;
           withFile?: boolean;
+          hideNotesInSensitiveChannel?: boolean;
         };
       };
     };
