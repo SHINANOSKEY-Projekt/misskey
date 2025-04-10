@@ -293,5 +293,109 @@ class Systemd {
 
 	async function renderError(code, details) {
 		systemd.emergency_mode(code, details);
+		if (document.readyState === 'loading') {
+			await new Promise(resolve => window.addEventListener('DOMContentLoaded', resolve));
+		}
+		document.body.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 9v4" /><path d="M12 16v.01" /></svg>
+		<div class="message">読み込みに失敗しました</div>
+		<div class="submessage">Failed to initialize Misskey</div>
+		<div class="submessage">Error Code: ${code}</div>
+		<button onclick="location.reload(!0)">
+			<div>リロード</div>
+			<div><small>Reload</small></div>
+		</button>`;
+		addStyle(`
+		#misskey_app,
+		#splash {
+			display: none !important;
+		}
+
+		html,
+		body {
+			margin: 0;
+		}
+
+		body {
+			position: relative;
+			color: #dee7e4;
+			font-family: Hiragino Maru Gothic Pro, BIZ UDGothic, Roboto, HelveticaNeue, Arial, sans-serif;
+			line-height: 1.35;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			margin: 0;
+			padding: 24px;
+			box-sizing: border-box;
+			overflow: hidden;
+
+			border-radius: var(--radius, 12px);
+			border: 1px solid rgba(231, 255, 251, 0.14);
+		}
+
+		body::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #192320;
+			border-radius: var(--radius, 12px);
+			z-index: -1;
+		}
+
+		html.embed.norounded body,
+		html.embed.norounded body::before {
+			border-radius: 0;
+		}
+
+		html.embed.noborder body {
+			border: none;
+		}
+
+		.icon {
+			max-width: 60px;
+			width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+			color: #dec340;
+		}
+
+		.message {
+			text-align: center;
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+
+		.submessage {
+			text-align: center;
+			font-size: 90%;
+			margin-bottom: 7.5px;
+		}
+
+		.submessage:last-of-type {
+			margin-bottom: 20px;
+		}
+
+		button {
+			padding: 7px 14px;
+			min-width: 100px;
+			font-weight: 700;
+			font-family: Hiragino Maru Gothic Pro, BIZ UDGothic, Roboto, HelveticaNeue, Arial, sans-serif;
+			line-height: 1.35;
+			border-radius: 99rem;
+			background-color: #b4e900;
+			color: #192320;
+			border: none;
+			cursor: pointer;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		button:hover {
+			background-color: #c6ff03;
+		}`);
 	}
 })();
