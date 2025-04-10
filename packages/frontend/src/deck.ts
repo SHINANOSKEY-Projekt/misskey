@@ -55,7 +55,7 @@ export type Column = {
 	channelId?: string;
 	roleId?: string;
 	excludeTypes?: typeof notificationTypes[number][];
-	tl?: BasicTimelineType | 'vmimi-relay' | 'vmimi-relay-social';
+	tl?: BasicTimelineType;
 	withRenotes?: boolean;
 	withReplies?: boolean;
 	withSensitive?: boolean;

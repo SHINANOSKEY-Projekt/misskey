@@ -23,6 +23,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 				:withReplies="withReplies"
 				:withSensitive="withSensitive"
 				:onlyFiles="onlyFiles"
+				:withLocalOnly="withLocalOnly"
 				:sound="true"
 				@queue="queueUpdated"
 			/>
@@ -49,7 +50,7 @@ import { antennasCache, userListsCache, favoritedChannelsCache } from '@/cache.j
 import { deviceKind } from '@/utility/device-kind.js';
 import { deepMerge } from '@/utility/merge.js';
 import { miLocalStorage } from '@/local-storage.js';
-import { availableBasicTimelines, hasWithReplies, isAvailableBasicTimeline, isBasicTimeline, basicTimelineIconClass, hasWithLocalOnly } from '@/timelines.js';
+import { availableBasicTimelines, hasWithReplies, hasWithLocalOnly, isAvailableBasicTimeline, isBasicTimeline, basicTimelineIconClass } from '@/timelines.js';
 import { prefer } from '@/preferences.js';
 import { useRouter } from '@/router.js';
 
@@ -76,7 +77,7 @@ const withRenotes = computed<boolean>({
 	set: (x) => saveTlFilter('withRenotes', x),
 });
 const withLocalOnly = computed<boolean>({
-	get: () => store.reactiveState.tl.value.filter.withLocalOnly,
+	get: () => store.r.tl.value.filter.withLocalOnly,
 	set: (x) => saveTlFilter('withLocalOnly', x),
 });
 
