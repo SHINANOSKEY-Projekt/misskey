@@ -57,8 +57,6 @@ provide(DI.forceSpacerMin, true);
 
 const withWallpaper = prefer.s['deck.wallpaper'] != null;
 
-const withWallpaper = prefer.s['deck.wallpaper'] != null;
-
 const props = withDefaults(defineProps<{
 	column: Column;
 	isStacked?: boolean;
