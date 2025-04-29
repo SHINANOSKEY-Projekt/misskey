@@ -1,6 +1,6 @@
 {
 	"name": "misskey",	
-	"version": "2025.4.0-SHINANO.2+20250410.4",
+	"version": "2025.4.1-Alpha.0.SHINANO.0+20250430.1",
 	"codename": "Churchill",
 	"repository": {
 		"type": "git",
