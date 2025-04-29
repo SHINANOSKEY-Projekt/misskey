@@ -49,7 +49,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 					<div :class="$style.pageRoot">
 						<div class="_spacer" style="--MI_SPACER-min: 20px; --MI_SPACER-max: 28px;" :class="$style.pageMain">
 							<XProfile/>
-						</MkSpacer>
+						</div>
 						<div :class="$style.pageFooter">
 							<div class="_buttonsCenter">
 								<MkButton rounded data-cy-user-setup-back @click="page--"><i class="ti ti-arrow-left"></i> {{ i18n.ts.goBack }}</MkButton>
@@ -64,7 +64,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 					<div :class="$style.pageRoot">
 						<div class="_spacer" style="--MI_SPACER-min: 20px; --MI_SPACER-max: 28px;" :class="$style.pageMain">
 							<XPrivacy/>
-						</MkSpacer>
+						</div>
 						<div :class="$style.pageFooter">
 							<div class="_buttonsCenter">
 								<MkButton rounded data-cy-user-setup-back @click="page--"><i class="ti ti-arrow-left"></i> {{ i18n.ts.goBack }}</MkButton>
