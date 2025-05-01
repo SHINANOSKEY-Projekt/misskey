@@ -528,6 +528,24 @@ export const meta = {
 					optional: false, nullable: false,
 				},
 			},
+			deliverSuspendedSoftware: {
+				type: 'array',
+				optional: false, nullable: false,
+				items: {
+					type: 'object',
+					optional: false, nullable: false,
+					properties: {
+						software: {
+							type: 'string',
+							optional: false, nullable: false,
+						},
+						versionRange: {
+							type: 'string',
+							optional: false, nullable: false,
+						},
+					},
+				},
+			},
 			customSplashText: {
 				type: 'array',
 				optional: false, nullable: false,
@@ -535,6 +553,7 @@ export const meta = {
 					type: 'string',
 				},
 			},
+			
 		},
 	},
 } as const;
@@ -681,6 +700,7 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 				federation: instance.federation,
 				federationHosts: instance.federationHosts,
 				customSplashText: instance.customSplashText,
+				deliverSuspendedSoftware: instance.deliverSuspendedSoftware,
 			};
 		});
 	}
