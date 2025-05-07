@@ -1,10 +1,10 @@
 {
 	"name": "misskey",
-	"version": "2025.5.0.SHINANO.1+20250507.2",
+	"version": "2025.5.0.SHINANO.2+20250507.3",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/misskey-dev/misskey.git"
+		"url": "https://github.com/SHINANOSKEY-Projekt/SHINANOSKEY.git"
 	},
 	"packageManager": "pnpm@10.10.0",
 	"workspaces": [
