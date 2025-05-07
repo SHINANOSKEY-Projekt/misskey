@@ -15,6 +15,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<XCpu v-else-if="widgetProps.view === 2" :connection="connection" :meta="meta"/>
 		<XMemory v-else-if="widgetProps.view === 3" :connection="connection" :meta="meta"/>
 		<XDisk v-else-if="widgetProps.view === 4" :connection="connection" :meta="meta"/>
+		<XAllCircle v-else-if="widgetProps.view === 5" :connection="connection" :meta="meta"/>
 	</div>
 </MkContainer>
 </template>
@@ -29,6 +30,7 @@ import XNet from './net.vue';
 import XCpu from './cpu.vue';
 import XMemory from './mem.vue';
 import XDisk from './disk.vue';
+import XAllCircle from './all-circle.vue';
 import MkContainer from '@/components/MkContainer.vue';
 import type { GetFormResultType } from '@/utility/form.js';
 import { misskeyApiGet } from '@/utility/misskey-api.js';
@@ -71,7 +73,7 @@ misskeyApiGet('server-info', {}).then(res => {
 });
 
 const toggleView = () => {
-	if (widgetProps.view === 4) {
+	if (widgetProps.view === 5) {
 		widgetProps.view = 0;
 	} else {
 		widgetProps.view++;
