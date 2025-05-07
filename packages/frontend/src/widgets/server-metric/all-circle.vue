@@ -1,3 +1,6 @@
+<!--
+SPDX-License-Identifier: AGPL-3.0-only
+-->
 <template>
 	<div class="vrvdvsas">
 		<XPie class="pie" :value="cpuUsage" :title="`CPU`"/>
