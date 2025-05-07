@@ -72,7 +72,7 @@ export async function mainBoot() {
 
 		// prefereces migration
 		// TODO: そのうち消す
-		if (lastVersion && (compareVersions('2025.3.2-alpha.0', lastVersion) === 1)) {
+		if (lastVersion && (compareVersions('2025.4.0-SHINANO.1+20250410.3', lastVersion) === 1)) {
 			console.log('Preferences migration');
 
 			migrateOldSettings();
