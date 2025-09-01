@@ -4,6 +4,10 @@ VRTLのブランチで行われた変更点をまとめています
 
 <!-- VV Please add changelog here VV -->
 
+--- 2025.8.0-vrtl.1 released at this time ---
+
+- fix(frontend): VRTL系タイムラインが withReplies なしでロードされる問題 - 2025/08/03 #243
+
 --- 2025.7.0-vrtl.1 released at this time ---
 
 --- 2025.6.3-vrtl.1 released at this time ---
