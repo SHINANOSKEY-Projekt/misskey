@@ -104,17 +104,17 @@ async function setType() {
 	const { canceled, result: src } = await os.select({
 		title: i18n.ts.timeline,
 		items: [{
-			value: 'home' as const, text: i18n.ts._timelines.home,
+			value: 'home', label: i18n.ts._timelines.home,
 		}, {
-			value: 'local' as const, text: i18n.ts._timelines.local,
+			value: 'local', label: i18n.ts._timelines.local,
 		}, {
-			value: 'social' as const, text: i18n.ts._timelines.social,
+			value: 'social', label: i18n.ts._timelines.social,
 		}, {
-			value: 'global' as const, text: i18n.ts._timelines.global,
+			value: 'global', label: i18n.ts._timelines.global,
 		}, {
-			value: 'vmimi-relay' as const, text: i18n.ts._timelines['vmimi-relay'],
+			value: 'vmimi-relay', label: i18n.ts._timelines['vmimi-relay'],
 		}, {
-			value: 'vmimi-relay-social' as const, text: i18n.ts._timelines['vmimi-relay-social'],
+			value: 'vmimi-relay-social', label: i18n.ts._timelines['vmimi-relay-social'],
 		}],
 	});
 	if (canceled) {
