@@ -3735,6 +3735,15 @@ export type paths = {
          */
         post: operations['users___gallery___posts'];
     };
+    '/users/get-following-users-by-birthday': {
+        /**
+         * users/get-following-users-by-birthday
+         * @description Retrieve users who have a birthday on the specified range.
+         *
+         *     **Credential required**: *Yes* / **Permission**: *read:account*
+         */
+        post: operations['users___get-following-users-by-birthday'];
+    };
     '/users/get-frequently-replied-users': {
         /**
          * users/get-frequently-replied-users
@@ -4277,6 +4286,33 @@ export type components = {
                     userListId: string;
                 };
                 test?: {
+                    /** @enum {string} */
+                    type: 'all' | 'following' | 'follower' | 'mutualFollow' | 'followingOrFollower' | 'never';
+                } | {
+                    /** @enum {string} */
+                    type: 'list';
+                    /** Format: misskey:id */
+                    userListId: string;
+                };
+                login?: {
+                    /** @enum {string} */
+                    type: 'all' | 'following' | 'follower' | 'mutualFollow' | 'followingOrFollower' | 'never';
+                } | {
+                    /** @enum {string} */
+                    type: 'list';
+                    /** Format: misskey:id */
+                    userListId: string;
+                };
+                createToken?: {
+                    /** @enum {string} */
+                    type: 'all' | 'following' | 'follower' | 'mutualFollow' | 'followingOrFollower' | 'never';
+                } | {
+                    /** @enum {string} */
+                    type: 'list';
+                    /** Format: misskey:id */
+                    userListId: string;
+                };
+                exportCompleted?: {
                     /** @enum {string} */
                     type: 'all' | 'following' | 'follower' | 'mutualFollow' | 'followingOrFollower' | 'never';
                 } | {
@@ -5356,7 +5392,8 @@ export type components = {
             /** Format: id */
             timeoutUserId: string | null;
             black: number | null;
-            bw: string;
+            /** @enum {string} */
+            bw: 'random' | '1' | '2';
             noIrregularRules: boolean;
             isLlotheo: boolean;
             canPutEverywhere: boolean;
@@ -5392,7 +5429,8 @@ export type components = {
             /** Format: id */
             timeoutUserId: string | null;
             black: number | null;
-            bw: string;
+            /** @enum {string} */
+            bw: 'random' | '1' | '2';
             noIrregularRules: boolean;
             isLlotheo: boolean;
             canPutEverywhere: boolean;
@@ -5422,7 +5460,7 @@ export type components = {
             feedbackUrl: string | null;
             defaultDarkTheme: string | null;
             defaultLightTheme: string | null;
-            clientOptions: Record<string, never>;
+            clientOptions: components['schemas']['MetaClientOptions'];
             disableRegistration: boolean;
             emailRequiredForSignup: boolean;
             enableHcaptcha: boolean;
@@ -5522,6 +5560,12 @@ export type components = {
             cacheRemoteSensitiveFiles: boolean;
         };
         MetaDetailed: components['schemas']['MetaLite'] & components['schemas']['MetaDetailedOnly'];
+        MetaClientOptions: {
+            /** @enum {string} */
+            entrancePageStyle: 'classic' | 'simple';
+            showTimelineForVisitor: boolean;
+            showActivitiesForVisitor: boolean;
+        };
         UserWebhook: {
             /** Format: id */
             id: string;
@@ -6797,8 +6841,10 @@ export interface operations {
                         updatedAt: string | null;
                         text: string;
                         title: string;
-                        icon: string | null;
-                        display: string;
+                        /** @enum {string} */
+                        icon: 'info' | 'warning' | 'error' | 'success';
+                        /** @enum {string} */
+                        display: 'normal' | 'banner' | 'dialog';
                         isActive: boolean;
                         forExistingUsers: boolean;
                         silence: boolean;
@@ -8237,16 +8283,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    'application/json': {
-                        /** Format: id */
-                        id: string;
-                        aliases: string[];
-                        name: string;
-                        category: string | null;
-                        /** @description The local host is represented with `null`. The field exists for compatibility with other API endpoints that return files. */
-                        host: string | null;
-                        url: string;
-                    }[];
+                    'application/json': components['schemas']['EmojiDetailed'][];
                 };
             };
             /** @description Client error */
@@ -8325,16 +8362,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    'application/json': {
-                        /** Format: id */
-                        id: string;
-                        aliases: string[];
-                        name: string;
-                        category: string | null;
-                        /** @description The local host is represented with `null`. */
-                        host: string | null;
-                        url: string;
-                    }[];
+                    'application/json': components['schemas']['EmojiDetailed'][];
                 };
             };
             /** @description Client error */
@@ -9466,7 +9494,7 @@ export interface operations {
                         deeplIsPro: boolean;
                         defaultDarkTheme: string | null;
                         defaultLightTheme: string | null;
-                        clientOptions: Record<string, never>;
+                        clientOptions: components['schemas']['MetaClientOptions'];
                         description: string | null;
                         disableRegistration: boolean;
                         impressumUrl: string | null;
@@ -12722,7 +12750,12 @@ export interface operations {
                     description?: string | null;
                     defaultLightTheme?: string | null;
                     defaultDarkTheme?: string | null;
-                    clientOptions?: Record<string, never>;
+                    clientOptions?: {
+                        /** @enum {string} */
+                        entrancePageStyle?: 'classic' | 'simple';
+                        showTimelineForVisitor?: boolean;
+                        showActivitiesForVisitor?: boolean;
+                    };
                     cacheRemoteFiles?: boolean;
                     cacheRemoteSensitiveFiles?: boolean;
                     emailRequiredForSignup?: boolean;
@@ -24008,6 +24041,8 @@ export interface operations {
                     tag: string;
                     /** @default 10 */
                     limit?: number;
+                    /** @default 0 */
+                    offset?: number;
                     /** @enum {string} */
                     sort: '+follower' | '-follower' | '+createdAt' | '-createdAt' | '+updatedAt' | '-updatedAt';
                     /**
@@ -35032,6 +35067,7 @@ export interface operations {
                     untilDate?: number;
                     /** @default 10 */
                     limit?: number;
+                    /** @description @deprecated use get-following-users-by-birthday instead. */
                     birthday?: string | null;
                 };
             };
@@ -35118,6 +35154,92 @@ export interface operations {
                 };
                 content: {
                     'application/json': components['schemas']['GalleryPost'][];
+                };
+            };
+            /** @description Client error */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    'application/json': components['schemas']['Error'];
+                };
+            };
+            /** @description Authentication error */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    'application/json': components['schemas']['Error'];
+                };
+            };
+            /** @description Forbidden error */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    'application/json': components['schemas']['Error'];
+                };
+            };
+            /** @description I'm Ai */
+            418: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    'application/json': components['schemas']['Error'];
+                };
+            };
+            /** @description Internal server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    'application/json': components['schemas']['Error'];
+                };
+            };
+        };
+    };
+    'users___get-following-users-by-birthday': {
+        requestBody: {
+            content: {
+                'application/json': {
+                    /** @default 10 */
+                    limit?: number;
+                    /** @default 0 */
+                    offset?: number;
+                    birthday: {
+                        month: number;
+                        day: number;
+                    } | {
+                        begin: {
+                            month: number;
+                            day: number;
+                        };
+                        end: {
+                            month: number;
+                            day: number;
+                        };
+                    };
+                };
+            };
+        };
+        responses: {
+            /** @description OK (with results) */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    'application/json': {
+                        /** Format: misskey:id */
+                        id: string;
+                        birthday: string;
+                        user: components['schemas']['UserLite'];
+                    }[];
                 };
             };
             /** @description Client error */
