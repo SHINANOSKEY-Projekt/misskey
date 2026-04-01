@@ -10,6 +10,7 @@ jobs:
   publish-misskey-js:
     name: Publish misskey-js
     runs-on: ubuntu-latest
+    if: github.repository == 'misskey-dev/misskey'
 
     permissions:
       contents: read
@@ -28,11 +29,13 @@ jobs:
           cache: 'pnpm'
           # see https://docs.github.com/actions/use-cases-and-examples/publishing-packages/publishing-nodejs-packages#publishing-packages-to-the-npm-registry
           registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || secrets.NODE_AUTH_TOKEN }}
       - name: Publish package
         run: |
           pnpm i --frozen-lockfile
           pnpm build
           pnpm --filter misskey-js publish --access public --no-git-checks --provenance
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN || secrets.NODE_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN || secrets.NODE_AUTH_TOKEN }}
