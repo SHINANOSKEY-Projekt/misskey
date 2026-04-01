@@ -8,40 +8,40 @@ SPDX-License-Identifier: AGPL-3.0-only
 		<XPie class="pie" :value="diskUsage" :title="`DISK`"/>
 	</div>
 	</template>
-		
+
 	<script lang="ts" setup>
 	import { onMounted, onBeforeUnmount, ref } from 'vue';
 	import XPie from './pie.vue';
-		
+
 	const props = defineProps<{
 		connection: any,
 		meta: any
 	}>();
-		
-	const cpuUsage: number = ref(0);
-	const memUsage: number = ref(0);
-	const diskUsage: number = ref(0);
-		
-	function onStats(stats) {
+
+	const cpuUsage = ref<number>(0);
+	const memUsage = ref<number>(0);
+	const diskUsage = ref<number>(0);
+
+	function onStats(stats: { cpu: number; mem: { active: number } }) {
 		cpuUsage.value = stats.cpu;
 		memUsage.value = stats.mem.active / props.meta.mem.total;
 		diskUsage.value = props.meta.fs.used / props.meta.fs.total;
 	}
-		
+
 	onMounted(() => {
 		props.connection.on('stats', onStats);
 	});
-		
+
 	onBeforeUnmount(() => {
 		props.connection.off('stats', onStats);
 	});
 	</script>
-		
+
 		<style lang="scss" scoped>
 		.vrvdvsas {
 			display: flex;
 			padding: 16px;
-		
+
 			> .pie {
 				height: 82px;
 				flex-shrink: 0;
