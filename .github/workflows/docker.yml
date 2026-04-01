@@ -98,7 +98,11 @@ jobs:
       - name: Create manifest list and push
         working-directory: /tmp/digests
         run: |
-          docker buildx imagetools create $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
+          tag_args=$(printf '%s\n' "${{ steps.meta.outputs.tags }}" | sed '/^$/d; s/^/-t /' | tr '\n' ' ')
+          if [ -z "$tag_args" ]; then
+            tag_args="-t ${{ env.REGISTRY_IMAGE }}:sha-${{ github.sha }}"
+          fi
+          docker buildx imagetools create $tag_args \
             $(printf '${{ env.REGISTRY_IMAGE }}@sha256:%s ' *)
       - name: Inspect image
         run: |
