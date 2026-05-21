@@ -1,6 +1,6 @@
 {
 	"name": "misskey",
-	"version": "2026.5.3+SHINANO.1",
+	"version": "2026.5.4+SHINANO.1",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
