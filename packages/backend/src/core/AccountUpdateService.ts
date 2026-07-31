@@ -34,8 +34,8 @@ export class AccountUpdateService {
 		// フォロワーがリモートユーザーかつ投稿者がローカルユーザーならUpdateを配信
 		if (this.userEntityService.isLocalUser(user)) {
 			const content = this.apRendererService.addContext(this.apRendererService.renderUpdate(await this.apRendererService.renderPerson(user), user));
-			this.apDeliverManagerService.deliverToFollowers(user, content);
-			this.relayService.deliverToRelays(user, content);
+			await this.apDeliverManagerService.deliverToFollowers(user, content);
+			await this.relayService.deliverToRelays(user, content);
 		}
 	}
 }
