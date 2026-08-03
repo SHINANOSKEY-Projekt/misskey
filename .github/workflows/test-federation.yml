@@ -41,7 +41,7 @@ jobs:
           cache: 'pnpm'
       - name: Build Misskey
         run: |
-          pnpm i --frozen-lockfile
+          pnpm install --frozen-lockfile --fetch-retries 5 --network-concurrency 1
           pnpm build
       - name: Setup
         run: |
