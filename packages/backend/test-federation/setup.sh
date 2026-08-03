@@ -1,5 +1,11 @@
 #!/bin/bash
-mkdir certificates
+set -euo pipefail
+
+mkdir -p .config certificates
+
+if [ ! -f .config/docker.env ]; then
+  cp .config/example.docker.env .config/docker.env
+fi
 
 # rootCA
 openssl genrsa -des3 \

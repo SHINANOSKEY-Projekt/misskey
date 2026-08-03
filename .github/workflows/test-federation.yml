@@ -47,6 +47,10 @@ jobs:
         run: |
           echo "NODE_VERSION=$(cat ${{ matrix.node-version-file }})" >> $GITHUB_ENV
           cd packages/backend/test-federation
+          mkdir -p .config
+          if [ ! -f .config/docker.env ]; then
+            cp .config/example.docker.env .config/docker.env
+          fi
           bash ./setup.sh
           sudo chmod 644 ./certificates/*.test.key
       - name: Start servers
