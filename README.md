@@ -5,6 +5,7 @@
 このフォークには
 - Back to Twitter  
 - VmimiRelay  
-- メトリクスの改良  
+- メトリクスの改良
+- jxl Support(WIP) 
 - そのたふぉーくとしていきていくためにひつようなもの  
 が含まれています。
