@@ -33,6 +33,7 @@ export const FILE_TYPE_IMAGE = [
 	'image/webp',
 	'image/avif',
 	'image/apng',
+	'image/jxl',
 	'image/bmp',
 	'image/tiff',
 	'image/x-icon',
@@ -49,10 +50,11 @@ export const FILE_TYPE_BROWSERSAFE = [
 	'image/webp',
 	'image/avif',
 	'image/apng',
+	'image/jxl',
 	'image/bmp',
 	'image/tiff',
 	'image/x-icon',
-
+  
 	// OggS
 	'audio/opus',
 	'video/ogg',
@@ -82,6 +84,8 @@ export const FILE_TYPE_BROWSERSAFE = [
 	// backward compatibility
 	'audio/x-flac',
 	'audio/vnd.wave',
+
+	'video/x-mng',
 ];
 /*
 https://github.com/sindresorhus/file-type/blob/main/supported.js
