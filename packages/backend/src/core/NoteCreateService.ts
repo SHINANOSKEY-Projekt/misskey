@@ -786,7 +786,7 @@ export class NoteCreateService implements OnApplicationShutdown {
 		}, user);
 
 		if (data.reply) {
-			this.saveReply(data.reply, note);
+			await this.saveReply(data.reply, note);
 		}
 
 		if (data.reply == null) {
@@ -1016,8 +1016,8 @@ export class NoteCreateService implements OnApplicationShutdown {
 	}
 
 	@bindThis
-	private saveReply(reply: MiNote, note: MiNote) {
-		this.notesRepository.increment({ id: reply.id }, 'repliesCount', 1);
+	private async saveReply(reply: MiNote, note: MiNote) {
+		await this.notesRepository.increment({ id: reply.id }, 'repliesCount', 1);
 	}
 
 	@bindThis
