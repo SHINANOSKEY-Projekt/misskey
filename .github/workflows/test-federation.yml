@@ -33,6 +33,8 @@ jobs:
           submodules: true
       - name: Setup pnpm
         uses: pnpm/action-setup@v6.0.10
+        with:
+          version: 12.14.0
       - name: Install FFmpeg
         run: |
           sudo apt update
@@ -62,25 +64,40 @@ jobs:
         # https://github.com/docker/compose/issues/1294#issuecomment-374847206
         run: |
           cd packages/backend/test-federation
+          export NODE_VERSION="$(cat "$GITHUB_WORKSPACE/${{ matrix.node-version-file }}")"
+          mkdir -p .config
+          cp .config/example.docker.env .config/docker.env
           touch ../../../built/._config_.json
           docker compose up -d --scale tester=0
       - name: Print start_servers error
         if: ${{ steps.start_servers.outcome == 'failure' }}
         run: |
           cd packages/backend/test-federation
+          export NODE_VERSION="$(cat "$GITHUB_WORKSPACE/${{ matrix.node-version-file }}")"
+          mkdir -p .config
+          cp .config/example.docker.env .config/docker.env
           docker compose logs | tail -n 300
           exit 1
       - name: Test
         run: |
           cd packages/backend/test-federation
+          export NODE_VERSION="$(cat "$GITHUB_WORKSPACE/${{ matrix.node-version-file }}")"
+          mkdir -p .config
+          cp .config/example.docker.env .config/docker.env
           docker compose run --no-deps tester
       - name: Log
         if: always()
         run: |
           cd packages/backend/test-federation
+          export NODE_VERSION="$(cat "$GITHUB_WORKSPACE/${{ matrix.node-version-file }}")"
+          mkdir -p .config
+          cp .config/example.docker.env .config/docker.env
           docker compose logs
       - name: Stop servers
         if: always()
         run: |
           cd packages/backend/test-federation
+          export NODE_VERSION="$(cat "$GITHUB_WORKSPACE/${{ matrix.node-version-file }}")"
+          mkdir -p .config
+          cp .config/example.docker.env .config/docker.env
           docker compose down
