@@ -54,7 +54,10 @@ jobs:
       with:
         node-version-file: '.node-version'
         cache: 'pnpm'
-    - run: pnpm install --frozen-lockfile --fetch-retries 5 --network-concurrency 1
+    - run: pnpm install --frozen-lockfile
+      env:
+        PNPM_CONFIG_FETCH_RETRIES: 5
+        PNPM_CONFIG_NETWORK_CONCURRENCY: 1
 
   lint:
     needs: [pnpm_install]
@@ -89,7 +92,10 @@ jobs:
       with:
         node-version-file: '.node-version'
         cache: 'pnpm'
-    - run: pnpm install --frozen-lockfile --fetch-retries 5 --network-concurrency 1
+    - run: pnpm install --frozen-lockfile
+      env:
+        PNPM_CONFIG_FETCH_RETRIES: 5
+        PNPM_CONFIG_NETWORK_CONCURRENCY: 1
     - name: Restore eslint cache
       uses: actions/cache@v6.1.0
       with:
@@ -122,7 +128,10 @@ jobs:
       with:
         node-version-file: '.node-version'
         cache: 'pnpm'
-    - run: pnpm install --frozen-lockfile --fetch-retries 5 --network-concurrency 1
+    - run: pnpm install --frozen-lockfile
+      env:
+        PNPM_CONFIG_FETCH_RETRIES: 5
+        PNPM_CONFIG_NETWORK_CONCURRENCY: 1
     - run: pnpm --filter "${{ matrix.workspace }}^..." run build
     - run: pnpm --filter ${{ matrix.workspace }} run typecheck
 
@@ -143,6 +152,9 @@ jobs:
       with:
         node-version-file: '.node-version'
         cache: 'pnpm'
-    - run: pnpm install --frozen-lockfile --fetch-retries 5 --network-concurrency 1
+    - run: pnpm install --frozen-lockfile
+      env:
+        PNPM_CONFIG_FETCH_RETRIES: 5
+        PNPM_CONFIG_NETWORK_CONCURRENCY: 1
     - run: node --test scripts/check-dts.test.mjs
     - run: pnpm check-dts

@@ -46,8 +46,11 @@ jobs:
           cache: 'pnpm'
       - name: Build Misskey
         run: |
-          pnpm install --frozen-lockfile --fetch-retries 5 --network-concurrency 1
+          pnpm install --frozen-lockfile
           pnpm build
+        env:
+          PNPM_CONFIG_FETCH_RETRIES: 5
+          PNPM_CONFIG_NETWORK_CONCURRENCY: 1
       - name: Setup
         run: |
           echo "NODE_VERSION=$(cat ${{ matrix.node-version-file }})" >> $GITHUB_ENV
