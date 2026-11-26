@@ -44,7 +44,6 @@ jobs:
     steps:
     - uses: actions/checkout@v7.0.1
       with:
-        fetch-depth: 0
         submodules: true
     - name: Setup pnpm
       uses: pnpm/action-setup@v6.1.1
@@ -80,7 +79,6 @@ jobs:
     steps:
     - uses: actions/checkout@v7.0.1
       with:
-        fetch-depth: 0
         submodules: true
     - name: Setup pnpm
       uses: pnpm/action-setup@v6.1.1
@@ -114,7 +112,6 @@ jobs:
     steps:
     - uses: actions/checkout@v7.0.1
       with:
-        fetch-depth: 0
         submodules: true
     - name: Setup pnpm
       uses: pnpm/action-setup@v6.1.1
@@ -136,7 +133,6 @@ jobs:
     steps:
     - uses: actions/checkout@v7.0.1
       with:
-        fetch-depth: 0
         submodules: true
     - name: Setup pnpm
       uses: pnpm/action-setup@v6.1.1
